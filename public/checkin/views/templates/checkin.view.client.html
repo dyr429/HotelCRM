@@ -1,0 +1,197 @@
+<div class="content" ng-switch="model.mode">
+    <div ng-switch-when="findcheckin" class="findcheckin-container">
+        <h1>Welcome to Edena Resorts</h1>
+        <div class="text-input">
+            <input type="text"
+                   id="input1"
+                    ng-model="model.resvNo"
+                   placeholder="Your Reservation No.">
+            <label for="input1">Reservatin No.</label>
+        </div>
+        <!--<input class="form-control"-->
+               <!--type="text"-->
+               <!--ng-model="model.resvNo">-->
+        <!--</input>-->
+        <a class="btn btn-mobile btn-edena"
+           role="button"
+
+           ng-click="model.getReservationByNo()">Check in</a>
+
+        <div ng-show="model.errorMessage" class="alert alert-danger">
+            <h3>{{model.errorMessage}}</h3>
+        </div>
+    </div>
+
+
+
+    <div id="Checkin" class="inline" ng-switch-when="checkin">
+        <h1>GUEST CHECK IN</h1>
+
+        <form id="payment-form">
+            <div class="form-group">
+                <label>Reservation Number</label>
+                <div class="num-placeholder">
+                    <input id="resvno"
+                           readonly
+                           class="form-control"
+                           value="{{model.resv.reservationnumber}}">
+                </div>
+            </div>
+
+            <div class="expiry-date-group form-group">
+                <label>Checkin</label>
+                <input class="form-control"
+                       id="checkin"
+                       type="date"
+                       readonly
+                       ng-model="model.formatcheckindate">
+                </input>
+            </div>
+
+            <div class="security-code-group form-group">
+                <label>Checkout</label>
+                <input class="form-control"
+                       id="checkout"
+                       type="date"
+                       readonly
+                       ng-model=" model.formatcheckoutdate">
+                </input>
+            </div>
+
+            <div class="expiry-date-group form-group">
+                <label>First Name</label>
+                <input class="form-control"
+                       id="firstname"
+                       type="text"
+                       ng-model="model.resv.firstname">
+                </input>
+            </div>
+
+            <div class="security-code-group form-group">
+                <label >Last Name</label>
+                <div class="input-container" >
+                    <input class="form-control"
+                           id="lastname"
+                           type="text"
+                           ng-model="model.resv.lastname">
+                    </input>
+                </div>
+
+            </div>
+
+            <div class="expiry-date-group form-group">
+                <label>Phone Number</label>
+                <input class="form-control"
+                       id="phone"
+                       type="text"
+                       ng-model="model.resv.phone">
+
+                </input>
+            </div>
+            <div class="security-code-group form-group">
+                <label>Number of Guests</label>
+                <div class="input-container" >
+                    <select
+                            ng-model="model.resv.people"
+                            id="guestno"
+                            class="form-control">
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5</option>
+                        <option value=6>6</option>
+                    </select>
+                </div>
+                <div class="cvc-preview-container two-card hide">
+                    <div class="amex-cvc-preview"></div>
+                    <div class="visa-mc-dis-cvc-preview"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input class="form-control"
+                       type="email"
+                       maxlength="255"
+                       ng-model="model.resv.email"
+                       id="email"></input>
+            </div>
+
+            <!--<div class="form-group">-->
+                <!--<label>Card Holder Name</label>-->
+                <!--<input class="form-control" type="text" maxlength="255"></input>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label>Card number</label>-->
+                <!--<input class="null card-image form-control" type="text"></input>-->
+            <!--</div>-->
+            <!--<div class="expiry-date-group form-group">-->
+                <!--<label>Expiry date</label>-->
+                <!--<input class="form-control" type="text" placeholder="MM / YY" maxlength="7"></input>-->
+            <!--</div>-->
+            <!--<div class="security-code-group form-group">-->
+                <!--<label>Security code</label>-->
+                <!--<div class="input-container" >-->
+                    <!--<input class="form-control" type="text" ></input>-->
+                <!--</div>-->
+                <!--<div class="cvc-preview-container two-card hide">-->
+                    <!--<div class="amex-cvc-preview"></div>-->
+                    <!--<div class="visa-mc-dis-cvc-preview"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="zip-code-group form-group">-->
+                <!--<label>ZIP/Postal code</label>-->
+                <!--<div class="input-container">-->
+                    <!--<input  class="form-control" type="text" maxlength="10"></input>-->
+                <!--</div>-->
+            <!--</div>-->
+            <textarea rows="8"
+                      class="form-control"
+                      style="resize:none"
+                      readonly>
+fasdfdasfdasfsadfasdfasdffasdfdasfdasfsadfasdfasdffasdfdasfdasfsadfasdfasdffasdfdasfdasfsadfasdfasdffasdfdasfdasfsadfasdfasdf
+                fasdfdasfdasfsadfasdfasdffasdfdasfdasfsadfasdfasdffasdfdasfdasfsadfasdfasdffasdfdasfdasfsadfasdfasdf
+            </textarea>
+
+            <p>
+                <input id="agree"ng-model="model.agreeTerms" type="checkbox"/>
+                <label for="agree">I have read and agree with terms</label>
+            </p>
+
+            <div class="form-row">
+                <label for="card-element">
+                    Credit or debit card
+                </label>
+                <div id="card-element">
+                    <!-- a Stripe Element will be inserted here. -->
+                </div>
+
+                <!-- Used to display form errors -->
+                <div id="card-errors" role="alert"></div>
+            </div>
+            <div class="card-row">
+                <span class="visa"></span>
+                <span class="mastercard"></span>
+                <span class="amex"></span>
+                <span class="discover"></span>
+            </div>
+
+            <button id="PayButton"
+                    class="btn btn-block btn-success submit-button"
+                    ng-click="model.checkIn()">
+            <span class="submit-button-lock"></span>
+            <span class="align-middle">Continue</span>
+            </button>
+
+            <div class="error-msg" ng-show="model.errorMessage">
+                <i class="fa fa-times-circle"></i>
+                {{model.errorMessage}}
+            </div>
+        </form>
+
+
+        <!--<script src="js/payment.js"></script>-->
+
+    </div>
+</div>

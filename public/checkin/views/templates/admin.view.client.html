@@ -1,0 +1,24 @@
+<div class="container">
+    <a ng-click="model.createReservation()" href=""><span class="glyphicon glyphicon-plus"></span></a>
+
+    <ul>
+        <li ng-repeat="reservation in model.reservations" class="list-group-item">
+            <h3>Reservation No: {{reservation.reservationnumber}}</h3>
+            <h5>First Name: {{reservation.firstname}}</h5>
+            <h5>Last Name: {{reservation.lastname}}</h5>
+            <h5>Check in: {{reservation.checkindate}}</h5>
+            <h5>Check out: {{reservation.checkoutdate}}</h5>
+            <h5>Creidt card: {{reservation.cardnumber}}</h5>
+            <h5>Exp mounth: {{reservation.expmounth}}</h5>
+            <h5>Exp year: {{reservation.expyear}}</h5>
+            <h5>Cvv: {{reservation.cvv}}</h5>
+            <h5>Status: {{reservation.status}}</h5>
+            <a href="#!/admin/{{reservation.reservationnumber}}">
+                <span class="glyphicon glyphicon-pencil"></span>
+            </a>
+            <a href="" ng-click="model.deleteReservation(reservation._id)">
+                <span class="glyphicon glyphicon-remove"></span>
+            </a>
+        </li>
+    </ul>
+</div>

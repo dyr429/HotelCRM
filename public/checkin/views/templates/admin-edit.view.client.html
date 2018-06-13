@@ -1,0 +1,80 @@
+<div class="container">
+    <a href="#!/admin"><span class="glyphicon glyphicon-chevron-left"></span></a>
+    <form class="form-horizontal">
+        <h5>Reservation Number</h5>
+        <input type="text"
+               class="form-control input-block"
+               ng-model="model.resv.reservationnumber"
+               readonly>
+
+        <h5>Checkin Date</h5>
+        <input type="date"
+               class="form-control input-block"
+               placeholder="date"
+               ng-model="model.formatcheckindate"
+               id="pass">
+
+        <h5>Checkout Date</h5>
+        <input type="date"
+               class="form-control input-block"
+               placeholder="date"
+               ng-model="model.formatcheckoutdate">
+
+        <h5>Number of People</h5>
+        <input type="text"
+               class="form-control input-block"
+               placeholder="people"
+               ng-model="model.resv.people">
+
+        <h5>First Name</h5>
+        <input type="text"
+               class="form-control input-block"
+               placeholder="first name"
+               ng-model="model.resv.firstname">
+
+        <h5>Last Name</h5>
+        <input type="text"
+               class="form-control input-block"
+               placeholder="last name"
+               ng-model="model.resv.lastname">
+
+        <h5>Phone</h5>
+        <input type="text"
+               class="form-control input-block"
+               placeholder="phone"
+               ng-model="model.resv.phone">
+
+        <h5>Email</h5>
+        <input type="email"
+               class="form-control input-block"
+               placeholder="Email"
+               ng-model="model.resv.email">
+
+
+        <h5>Status</h5>
+        <select ng-model="model.resv.status"c
+                class="form-control input-block">
+            <option value="BOOKED">BOOKED</option>
+            <option value="CHECKEDIN">CHECKEDIN</option>
+            <option value="CANCELED">CANCELED</option>
+        </select>
+        <!--<input type="text"-->
+               <!--class="form-control input-block"-->
+               <!--placeholder="status"-->
+               <!--ng-model="model.resv.status">-->
+        <div ng-show="model.showcharge">
+            <h5>Charge</h5>
+            <input type="number"
+                   class=""
+                   placeholder="charge amount"
+                   ng-model="model.chargeAmount">
+            <a class="btn btn-primary"
+               role="button"
+               ng-click="model.chargeMoney()">Charge</a>
+        </div>
+
+        <a class="btn btn-primary btn-block"
+           role="button"
+           ng-click="model.updateReservation()">Update</a>
+    </form>
+</div>

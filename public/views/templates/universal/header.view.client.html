@@ -1,0 +1,203 @@
+<nav class="navbar navbar-default mainheader">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-bar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="mylogo">
+                <a  href="#!"><img class="headlogo" src="images/logo_small.jpg"></a>
+            </div>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="main-nav-bar">
+
+            <ul class="nav navbar-nav navbar-right">
+                <!--<li class="dropdown">-->
+                    <!--<a href="" class="dropdown-toggle " data-toggle="dropdown">BOOK NOW<b class="caret"></b></a>-->
+                    <!--<ul class="dropdown-menu multi-column columns-4 wide-row">-->
+                        <!--<iframe src="http://app.littlehotelier.com/properties/edenaluxuryapartmentsdirect/widget?number_of_days=7"  frameborder="1" scrolling="no" allowtransparency="true" class="reservatoin-head hidden-xs">-->
+                        <!--</iframe>-->
+                        <!--<iframe src="http://app.littlehotelier.com/properties/edenaluxuryapartmentsdirect/booking_widget" height="200" width="250" frameborder="0" scrolling="no" allowtransparency="true" class="visible-xs"></iframe>-->
+                    <!--</ul>-->
+                <!--</li>-->
+
+                <!--<li class="divider-vertical"></li>-->
+
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Room Types <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><h5 href="">All Types</h5></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#!/collections">Edena Collection</a></li>
+                        <li><a href="#!/collections">Edena Urban</a></li>
+                        <li><a href="#!/collections">Edena Park</a></li>
+                    </ul>
+                </li>
+
+                <li class="divider-vertical"></li>
+
+                <li class="dropdown grid ">
+                    <a href="#!/aboutus"> What We Do </a>
+                </li>
+
+                <li class="divider-vertical"></li>
+
+                <li class="dropdown grid">
+                    <a href="#!/contact">Contact Us</a>
+                </li>
+
+                <li class="divider-vertical"></li>
+
+                <li class="dropdown">
+                <a href="" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <div ng-switch="model.headermode">
+                        <div ng-switch-when="user">
+                            <li><a href="#!/profile">Profile</a></li>
+                            <li><a href="" ng-click="model.logout()">Logout</a></li>
+
+                        </div>
+
+                        <div  ng-switch-when="guest">
+                            <li><a href="" data-toggle="modal" data-target="#myModal">Login</a></li>
+                            <li><a href="" data-toggle="modal" data-target="#myModal1">Register</a></li>
+                            <li><a href="" data-toggle="modal" data-target="#myModal">Book as a guest</a></li>
+                        </div>
+
+
+
+                    </div>
+
+            </ul>
+                </li>
+            </ul>
+        </div>
+
+                <!--<li class="dropdown grid">-->
+                    <!--<a href="#!/profile">Profile</a>-->
+                <!--</li>-->
+                <!--<li class="dropdown grid">-->
+                    <!--<a href="#!/payment">Payment</a>-->
+                <!--</li>-->
+                <!--<li class="dropdown grid">-->
+                    <!--<a href="#!/order">Orders</a>-->
+                <!--</li>-->
+                <!--<li class="dropdown grid">-->
+                    <!--<a href="#!/checkin">Check In</a>-->
+                <!--</li>-->
+        <!-- /.navbar-collapse -->
+        <!-- login -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content modal-info">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body real-spa">
+                        <div class="login-grids">
+                            <div class="login">
+
+                                <div class="login-right">
+                                    <form>
+                                        <h3>Login</h3>
+                                        <input type="text"
+                                               placeholder="Username"
+                                               ng-model="model.loginuser.username"
+                                        >
+                                        <input type="password"
+                                               placeholder="Password"
+                                               ng-model="model.loginuser.password"
+                                        >
+                                        <h4><a href="#">Forgot password</a> / <a href="#">Create new password</a></h4>
+                                        <div class="single-bottom">
+                                            <input type="checkbox"  id="brand" value="">
+                                            <label for="brand"><span></span>Remember Me.</label>
+                                        </div>
+                                        <input type="submit"
+                                               value="Login Now"
+                                                ng-click="model.login(model.loginuser)">
+                                        <a href="/auth/google" class="btn btn-danger btn-block">
+                                            <span class="fa fa-google-plus"></span>
+                                            Google
+                                        </a>
+                                    </form>
+                                </div>
+
+                            </div>
+                            <p>By logging in you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //login -->
+        <!-- Register -->
+        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content modal-info">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body real-spa">
+                        <div class="login-grids">
+                            <div class="login">
+                                <div class="login-right">
+
+
+
+                                    <form class="" role="form" name="form1" ng-submit="vm.submit()" novalidate>
+                                        <h3>Register </h3>
+                                        <input type="text"
+                                               placeholder="Username"
+                                               ng-model="model.user.username"
+                                               >
+                                        <input type="password"
+                                               placeholder="Password"
+                                               ng-model="model.user.password"
+                                        >
+
+                                        <input type="password"
+                                               placeholder="Re-enter Password"
+                                               ng-model="model.user.secondPassword"
+                                        >
+                                        <input type="text"
+                                               placeholder="Firstname"
+                                               ng-model="model.user.firstName"
+                                        >
+                                        <input type="text"
+                                               placeholder="Lastname"
+                                               ng-model="model.user.lastName"
+                                        >
+
+
+                                        <input type="submit"
+                                               value="Register Now"
+                                               ng-click="model.register(model.user, model.user.username)">
+
+                                        <div class="error-msg" ng-show="model.errorRegisterMessage">
+                                            <i class="fa fa-times-circle"></i>
+                                            {{model.errorRegisterMessage}}
+                                        </div>
+
+                                        <div  vc-recaptcha
+                                              key="'6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'"
+                                              ng-model="model.recapchaResponse"></div>
+
+                                    </form>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <p>By logging in you agree to our <a href="#!/terms">Terms</a> and <a href="#">Privacy Policy</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //Register -->
+    </div><!-- /.container-fluid -->
+</nav>
